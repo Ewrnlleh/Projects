@@ -1,0 +1,3 @@
+".\Objects\sine.obj" 
+TO ".\Objects\SinusGraphic" 
+PRINT(".\Listings\SinusGraphic.m51")

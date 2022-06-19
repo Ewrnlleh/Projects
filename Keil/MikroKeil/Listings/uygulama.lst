@@ -1,0 +1,76 @@
+A51 MACRO ASSEMBLER  UYGULAMA                                                             05/04/2020 08:51:03 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\uygulama.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE uygulama.asm SET(SMALL) DEBUG PRINT(.\Listings\uygulama.lst) OBJECT(.\O
+                      bjects\uygulama.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 900090            2     BASLA:  MOV DPTR,#TABLO
+0003 758911            3             MOV TMOD,#11H
+0006 758C00            4             MOV TH0,#0H
+0009 7D00              5             MOV R5,#0
+000B 758A00            6             MOV TL0,#0H
+000E D28C              7             SETB TR0
+0010 D290              8             SETB P1.0
+0012 EF                9     KONTROL:        MOV A,R7
+0013 F5B0             10             MOV P3,A
+0015 23               11             RL A
+0016 FF               12             MOV R7,A
+0017 E6               13             MOV A,@R0
+0018 F5A0             14             MOV P2,A
+001A 111E             15             ACALL YENILE
+001C 08               16             INC R0
+001D 0D               17             INC R5
+001E 758DDC           18     YENILE: MOV TH1,#0DCH
+0021 758B00           19             MOV TL1,#0
+0024 D28E             20             SETB TR1
+0026 308FFD           21     BURASI: JNB TF1,BURASI
+0029 C28E             22             CLR TR1
+002B C28F             23             CLR TF1
+002D 22               24             RET
+0090                  25     ORG 0090H
+0090 FFFFA4B0         26     TABLO:  DB 11111111B,11111111B,10100100B,10110000B,10011001B,10010010B,10000010B,11111000B,
+                             10000000B,10010000B
+0094 999282F8                
+0098 8090                    
+009A FFA4A4B0         27     TABLO2: DB 11111111B,10100100B,10100100B,10110000B,10011001B,10010010B,10000010B,11111000B,
+                             10000000B,10010000B
+009E 999282F8                
+00A2 8090                    
+                      28     END
+                             
+A51 MACRO ASSEMBLER  UYGULAMA                                                             05/04/2020 08:51:03 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BASLA. . . . . . .  C ADDR   0000H   A   
+BURASI . . . . . .  C ADDR   0026H   A   
+KONTROL. . . . . .  C ADDR   0012H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+TABLO. . . . . . .  C ADDR   0090H   A   
+TABLO2 . . . . . .  C ADDR   009AH   A   
+TF1. . . . . . . .  B ADDR   0088H.7 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+YENILE . . . . . .  C ADDR   001EH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
